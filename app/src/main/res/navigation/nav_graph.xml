@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/fragmentCuriosity">
+
+    <fragment
+        android:id="@+id/fragmentCuriosity"
+        android:name="in_.turker.nasarovervehicle.ui.fragment.curiosity.FragmentCuriosity"
+        android:label="FragmentCuriosity"
+        tools:layout="@layout/fragment_curiosity" />
+    <fragment
+        android:id="@+id/fragmentOpportunity"
+        android:name="in_.turker.nasarovervehicle.ui.fragment.opportunity.FragmentOpportunity"
+        android:label="FragmentOpportunity"
+        tools:layout="@layout/fragment_opportunity" />
+    <fragment
+        android:id="@+id/fragmentSpirit"
+        android:name="in_.turker.nasarovervehicle.ui.fragment.spirit.FragmentSpirit"
+        android:label="FragmentSpirit"
+        tools:layout="@layout/fragment_spirit" />
+</navigation>
