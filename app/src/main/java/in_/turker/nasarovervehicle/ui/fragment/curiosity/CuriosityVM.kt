@@ -22,7 +22,6 @@ import javax.inject.Inject
 class CuriosityVM @Inject constructor(
     myApp: Application,
     private val nasaRepository: NasaRepository
-
 ) : BaseViewModel(app = myApp) {
 
     fun getCuriosity(camera: CameraType? = null): Flow<PagingData<Photo>> {

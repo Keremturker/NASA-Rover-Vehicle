@@ -24,7 +24,6 @@ class FragmentCuriosity : BaseFragment<FragmentCuriosityBinding, CuriosityVM>() 
 
     override val viewModel: CuriosityVM by viewModels()
     private var vehiclePhotoAdapter = VehiclePhotoAdapter(::onClickAction)
-
     override fun getViewBinding() = FragmentCuriosityBinding.inflate(layoutInflater)
 
     override fun onFragmentCreated() {
@@ -46,7 +45,6 @@ class FragmentCuriosity : BaseFragment<FragmentCuriosityBinding, CuriosityVM>() 
                 requireContext(),2
             )
         }
-
     }
 
     private fun setCuriosityUiState(loadState: LoadState) {
@@ -64,6 +62,5 @@ class FragmentCuriosity : BaseFragment<FragmentCuriosityBinding, CuriosityVM>() 
     }
 
     private fun onClickAction(item: Photo) {}
-
 
 }

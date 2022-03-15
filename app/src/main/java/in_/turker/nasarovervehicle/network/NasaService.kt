@@ -12,7 +12,15 @@ interface NasaService {
 
     @GET("curiosity/photos?")
     suspend fun getCuriosity(
-        @Query("sol") sol: Int = 1000,
+        @Query("sol") sol: Int = 100,
+        @Query("page") page: Int,
+        @Query("api_key") api_key: String = BuildConfig.API_KEY,
+        @Query("camera") camera: String? = null
+    ): NasaResponse
+
+    @GET("opportunity/photos?")
+    suspend fun getOpportunity(
+        @Query("sol") sol: Int = 100,
         @Query("page") page: Int,
         @Query("api_key") api_key: String = BuildConfig.API_KEY,
         @Query("camera") camera: String? = null

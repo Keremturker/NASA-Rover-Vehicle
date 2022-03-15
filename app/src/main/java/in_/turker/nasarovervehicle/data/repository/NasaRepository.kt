@@ -5,6 +5,7 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import in_.turker.nasarovervehicle.data.paging_data_source.CuriosityPagingDataSource
 import in_.turker.nasarovervehicle.data.model.Photo
+import in_.turker.nasarovervehicle.data.paging_data_source.OpportunityPagingDataSource
 import in_.turker.nasarovervehicle.network.APIClientImpl
 import in_.turker.nasarovervehicle.utils.CameraType
 import kotlinx.coroutines.flow.Flow
@@ -22,6 +23,12 @@ class NasaRepository @Inject constructor(private val apiServiceImpl: APIClientIm
     fun getCuriosity(camera: CameraType? = null): Flow<PagingData<Photo>> {
         return Pager(config = PagingConfig(pageSize = NETWORK_PAGE_SIZE), pagingSourceFactory = {
             CuriosityPagingDataSource(apiServiceImpl.apiCollect, camera)
+        }).flow
+    }
+
+    fun getOpportunity(camera: CameraType? = null): Flow<PagingData<Photo>> {
+        return Pager(config = PagingConfig(pageSize = NETWORK_PAGE_SIZE), pagingSourceFactory = {
+            OpportunityPagingDataSource(apiServiceImpl.apiCollect, camera)
         }).flow
     }
 }
