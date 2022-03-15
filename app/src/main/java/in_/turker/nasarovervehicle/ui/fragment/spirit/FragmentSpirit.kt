@@ -34,6 +34,13 @@ class FragmentSpirit : BaseFragment<FragmentSpiritBinding, SpiritVM>() {
         prepareToolbar()
         collectLast(viewModel.getSpirit(), ::setVehiclePhoto)
 
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            binding.swipeRefreshLayout.isRefreshing = false
+            binding.progressBar.visibleIf(true)
+
+            collectLast(viewModel.getSpirit(), ::setVehiclePhoto)
+        }
+
     }
 
     private fun prepareRecyclerView() {

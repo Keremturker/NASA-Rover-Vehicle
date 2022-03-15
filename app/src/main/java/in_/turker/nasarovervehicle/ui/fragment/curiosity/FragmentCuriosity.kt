@@ -32,6 +32,13 @@ class FragmentCuriosity : BaseFragment<FragmentCuriosityBinding, CuriosityVM>() 
         prepareToolbar()
 
         collectLast(viewModel.getCuriosity(), ::setVehiclePhoto)
+
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            binding.swipeRefreshLayout.isRefreshing = false
+            binding.progressBar.visibleIf(true)
+
+            collectLast(viewModel.getCuriosity(), ::setVehiclePhoto)
+        }
     }
 
     private fun prepareRecyclerView() {

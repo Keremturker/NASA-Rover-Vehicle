@@ -31,6 +31,13 @@ class FragmentOpportunity : BaseFragment<FragmentOpportunityBinding, Opportunity
         prepareRecyclerView()
         prepareToolbar()
         collectLast(viewModel.getOpportunity(), ::setVehiclePhoto)
+
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            binding.swipeRefreshLayout.isRefreshing = false
+            binding.progressBar.visibleIf(true)
+
+            collectLast(viewModel.getOpportunity(), ::setVehiclePhoto)
+        }
     }
 
     private fun prepareRecyclerView() {
