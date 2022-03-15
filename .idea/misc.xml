@@ -7,6 +7,8 @@
         <entry key="app/src/main/res/layout/fragment_curiosity.xml" value="0.3591485507246377" />
         <entry key="app/src/main/res/layout/fragment_opportunity.xml" value="0.3591485507246377" />
         <entry key="app/src/main/res/layout/fragment_spirit.xml" value="0.3591485507246377" />
+        <entry key="app/src/main/res/layout/item_photo.xml" value="0.3591485507246377" />
+        <entry key="app/src/main/res/layout/item_upcoming.xml" value="0.3591485507246377" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.37604166666666666" />
       </map>
     </option>
