@@ -25,4 +25,12 @@ interface NasaService {
         @Query("api_key") api_key: String = BuildConfig.API_KEY,
         @Query("camera") camera: String? = null
     ): NasaResponse
+
+    @GET("spirit/photos?")
+    suspend fun getSpirit(
+        @Query("sol") sol: Int = 100,
+        @Query("page") page: Int,
+        @Query("api_key") api_key: String = BuildConfig.API_KEY,
+        @Query("camera") camera: String? = null
+    ): NasaResponse
 }
