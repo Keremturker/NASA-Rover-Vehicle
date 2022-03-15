@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="8dp">
+
+    <ImageView
+        android:id="@+id/imgClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:src="@drawable/ic_baseline_close_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/black" />
+
+
+    <ImageView
+        android:id="@+id/imgPhoto"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_margin="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgClose" />
+
+    <TextView
+        android:id="@+id/txtTakePhotoDateTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/take_photo_date"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/imgPhoto"
+        app:layout_constraintTop_toBottomOf="@id/imgPhoto" />
+
+    <TextView
+        android:id="@+id/txtTakePhotoDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/txtTakePhotoDateTitle"
+        app:layout_constraintTop_toTopOf="@id/txtTakePhotoDateTitle"
+        tools:text="2004-05-06" />
+
+
+    <TextView
+        android:id="@+id/txtVehicleNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/vehicle_name"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/imgPhoto"
+        app:layout_constraintTop_toBottomOf="@id/txtTakePhotoDateTitle" />
+
+    <TextView
+        android:id="@+id/txtVehicleName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/txtVehicleNameTitle"
+        app:layout_constraintTop_toTopOf="@id/txtVehicleNameTitle"
+        tools:text="Curiosity" />
+
+    <TextView
+        android:id="@+id/txtCameraNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/camera_name"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/imgPhoto"
+        app:layout_constraintTop_toBottomOf="@id/txtVehicleNameTitle" />
+
+    <TextView
+        android:id="@+id/txtCameraName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/txtCameraNameTitle"
+        app:layout_constraintTop_toTopOf="@id/txtCameraNameTitle"
+        tools:text="FHAZ" />
+
+
+    <TextView
+        android:id="@+id/txtVehicleStatusTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/vehicle_status"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/imgPhoto"
+        app:layout_constraintTop_toBottomOf="@id/txtCameraNameTitle" />
+
+    <TextView
+        android:id="@+id/txtVehicleStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/txtVehicleStatusTitle"
+        app:layout_constraintTop_toTopOf="@id/txtVehicleStatusTitle"
+        tools:text="Complete" />
+
+    <TextView
+        android:id="@+id/txtLaunchDateTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/launch_date"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/imgPhoto"
+        app:layout_constraintTop_toBottomOf="@id/txtVehicleStatusTitle" />
+
+    <TextView
+        android:id="@+id/txtLaunchDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/txtLaunchDateTitle"
+        app:layout_constraintTop_toTopOf="@id/txtLaunchDateTitle"
+        tools:text="2004-05-06" />
+
+
+    <TextView
+        android:id="@+id/txtLandingDateTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/landing_date"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/imgPhoto"
+        app:layout_constraintTop_toBottomOf="@id/txtLaunchDateTitle" />
+
+    <TextView
+        android:id="@+id/txtLandingDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/txtLandingDateTitle"
+        app:layout_constraintTop_toTopOf="@id/txtLandingDateTitle"
+        tools:text="2004-05-06" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

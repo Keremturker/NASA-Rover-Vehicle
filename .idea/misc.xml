@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable/ic_baseline_filter_alt_24.xml" value="0.2075" />
         <entry key="app/src/main/res/drawable/ic_space_vehicle.xml" value="0.2665" />
         <entry key="app/src/main/res/layout/activity_single.xml" value="0.3591485507246377" />
+        <entry key="app/src/main/res/layout/dialog_detail.xml" value="0.335" />
         <entry key="app/src/main/res/layout/dialog_filter.xml" value="0.3591485507246377" />
         <entry key="app/src/main/res/layout/fragment_curiosity.xml" value="0.3591485507246377" />
         <entry key="app/src/main/res/layout/fragment_opportunity.xml" value="0.3591485507246377" />

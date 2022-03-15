@@ -10,6 +10,7 @@ import in_.turker.nasarovervehicle.base.BaseFragment
 import in_.turker.nasarovervehicle.data.model.Photo
 import in_.turker.nasarovervehicle.databinding.FragmentOpportunityBinding
 import in_.turker.nasarovervehicle.ui.dialog.applyFilter
+import in_.turker.nasarovervehicle.ui.dialog.showDetail
 import in_.turker.nasarovervehicle.ui.fragment.curiosity.VehiclePhotoAdapter
 import in_.turker.nasarovervehicle.utils.collect
 import in_.turker.nasarovervehicle.utils.collectLast
@@ -97,6 +98,8 @@ class FragmentOpportunity : BaseFragment<FragmentOpportunityBinding, Opportunity
         vehiclePhotoAdapter.submitData(itemsPagingData)
     }
 
-    private fun onClickAction(item: Photo) {}
+    private fun onClickAction(item: Photo) {
+        showDetail(requireActivity(), item)
+    }
 
 }

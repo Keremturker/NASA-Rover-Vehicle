@@ -9,6 +9,13 @@
     <string name="cancel">Cancel</string>
     <string name="apply">Apply</string>
 
+    <string name="take_photo_date">Take Photo Date</string>
+    <string name="vehicle_name">Vehicle Name</string>
+    <string name="camera_name">Camera Name</string>
+    <string name="vehicle_status">Vehicle Status</string>
+    <string name="launch_date">Launch Date</string>
+    <string name="landing_date">Landing Date</string>
+
 
     <!--Camera Type-->
     <string name="FHAZ">FHAZ</string>

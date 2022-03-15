@@ -10,6 +10,7 @@ import in_.turker.nasarovervehicle.base.BaseFragment
 import in_.turker.nasarovervehicle.data.model.Photo
 import in_.turker.nasarovervehicle.databinding.FragmentCuriosityBinding
 import in_.turker.nasarovervehicle.ui.dialog.applyFilter
+import in_.turker.nasarovervehicle.ui.dialog.showDetail
 import in_.turker.nasarovervehicle.utils.collect
 import in_.turker.nasarovervehicle.utils.collectLast
 import in_.turker.nasarovervehicle.utils.visibleIf
@@ -98,6 +99,8 @@ class FragmentCuriosity : BaseFragment<FragmentCuriosityBinding, CuriosityVM>() 
         vehiclePhotoAdapter.submitData(itemsPagingData)
     }
 
-    private fun onClickAction(item: Photo) {}
+    private fun onClickAction(item: Photo) {
+        showDetail(requireActivity(), item)
+    }
 
 }

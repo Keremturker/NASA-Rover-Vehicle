@@ -4,9 +4,13 @@ import android.app.Activity
 import android.app.Dialog
 import android.view.Window
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.RadioGroup
+import android.widget.TextView
 import in_.turker.nasarovervehicle.R
+import in_.turker.nasarovervehicle.data.model.Photo
 import in_.turker.nasarovervehicle.utils.CameraType
+import in_.turker.nasarovervehicle.utils.loadImagesWithGlide
 
 /**
  * Created by Kerem TÜRKER on 15.03.2022.
@@ -83,4 +87,44 @@ fun applyFilter(
     }
 
 
+}
+
+
+fun showDetail(
+    context: Activity,
+    vehicle: Photo
+) {
+    Dialog(context).apply {
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
+        setContentView(R.layout.dialog_detail)
+        setCancelable(false)
+
+        val imgPhoto = findViewById<ImageView>(R.id.imgPhoto)
+        val imgClose = findViewById<ImageView>(R.id.imgClose)
+        val txtTakePhotoDate = findViewById<TextView>(R.id.txtTakePhotoDate)
+        val txtVehicleName = findViewById<TextView>(R.id.txtVehicleName)
+        val txtCameraName = findViewById<TextView>(R.id.txtCameraName)
+        val txtVehicleStatus = findViewById<TextView>(R.id.txtVehicleStatus)
+        val txtLaunchDate = findViewById<TextView>(R.id.txtLaunchDate)
+        val txtLandingDate = findViewById<TextView>(R.id.txtLandingDate)
+
+        imgPhoto.loadImagesWithGlide(vehicle.imgSrc)
+        txtTakePhotoDate.text = vehicle.earthDate
+        txtVehicleName.text = vehicle.rover.name
+        txtCameraName.text = vehicle.camera.name
+        txtVehicleStatus.text = vehicle.rover.status
+        txtLaunchDate.text = vehicle.rover.launchDate
+        txtLandingDate.text = vehicle.rover.landingDate
+
+        imgClose.setOnClickListener {
+            if (!context.isFinishing) {
+                dismiss()
+            }
+        }
+
+        if (!context.isFinishing) {
+            show()
+        }
+    }
 }

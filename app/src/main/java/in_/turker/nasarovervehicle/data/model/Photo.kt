@@ -2,6 +2,7 @@ package in_.turker.nasarovervehicle.data.model
 
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Photo(
     @SerializedName("camera")
@@ -16,4 +17,4 @@ data class Photo(
     val rover: Rover,
     @SerializedName("sol")
     val sol: Int
-)
+) : Serializable
