@@ -4,8 +4,13 @@
     <string name="opportunity">Opportunity</string>
     <string name="spirit">Spirit</string>
     <string name="filter_title">Select Camera Filter</string>
+    <string name="something_went_wrong">Something went wrong.</string>
+    <string name="no_record">No Record</string>
     <string name="cancel">Cancel</string>
     <string name="apply">Apply</string>
+
+
+    <!--Camera Type-->
     <string name="FHAZ">FHAZ</string>
     <string name="RHAZ">RHAZ</string>
     <string name="MAST">MAST</string>

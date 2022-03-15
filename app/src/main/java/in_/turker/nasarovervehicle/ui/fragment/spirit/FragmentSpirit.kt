@@ -13,6 +13,7 @@ import in_.turker.nasarovervehicle.ui.dialog.applyFilter
 import in_.turker.nasarovervehicle.ui.fragment.curiosity.VehiclePhotoAdapter
 import in_.turker.nasarovervehicle.utils.collect
 import in_.turker.nasarovervehicle.utils.collectLast
+import in_.turker.nasarovervehicle.utils.visibleIf
 import kotlinx.coroutines.flow.distinctUntilChangedBy
 import kotlinx.coroutines.flow.map
 
@@ -64,11 +65,27 @@ class FragmentSpirit : BaseFragment<FragmentSpiritBinding, SpiritVM>() {
 
     private fun setSpiritUiState(loadState: LoadState) {
         when (loadState) {
-            is LoadState.Loading -> {}
+            is LoadState.Loading -> {
+                binding.txtError.visibleIf(false)
+                binding.progressBar.visibleIf(true)
+            }
 
-            is LoadState.NotLoading -> {}
+            is LoadState.NotLoading -> {
+                binding.progressBar.visibleIf(false)
+                val hasItem = vehiclePhotoAdapter.itemCount != 0
+                binding.rvSpirit.visibleIf(hasItem)
+                binding.txtError.visibleIf(!hasItem)
+                binding.txtError.text = getString(R.string.no_record)
 
-            is LoadState.Error -> {}
+            }
+
+            is LoadState.Error -> {
+                binding.rvSpirit.visibleIf(false)
+                binding.progressBar.visibleIf(false)
+                binding.txtError.visibleIf(true)
+                binding.txtError.text =
+                    loadState.error.localizedMessage ?: getString(R.string.something_went_wrong)
+            }
         }
     }
 
@@ -77,6 +94,5 @@ class FragmentSpirit : BaseFragment<FragmentSpiritBinding, SpiritVM>() {
     }
 
     private fun onClickAction(item: Photo) {}
-
 
 }
