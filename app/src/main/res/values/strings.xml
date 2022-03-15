@@ -3,4 +3,16 @@
     <string name="curiosity">Curiosity</string>
     <string name="opportunity">Opportunity</string>
     <string name="spirit">Spirit</string>
+    <string name="filter_title">Select Camera Filter</string>
+    <string name="cancel">Cancel</string>
+    <string name="apply">Apply</string>
+    <string name="FHAZ">FHAZ</string>
+    <string name="RHAZ">RHAZ</string>
+    <string name="MAST">MAST</string>
+    <string name="CHEMCAM">CHEMCAM</string>
+    <string name="MAHLI">MAHLI</string>
+    <string name="MARDI">MARDI</string>
+    <string name="NAVCAM">NAVCAM</string>
+    <string name="PANCAM">PANCAM</string>
+    <string name="MINITES">MINITES</string>
 </resources>

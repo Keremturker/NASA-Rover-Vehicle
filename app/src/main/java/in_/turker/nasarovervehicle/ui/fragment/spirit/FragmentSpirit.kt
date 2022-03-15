@@ -6,11 +6,11 @@ import androidx.paging.LoadState
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.GridLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
+import in_.turker.nasarovervehicle.R
 import in_.turker.nasarovervehicle.base.BaseFragment
 import in_.turker.nasarovervehicle.data.model.Photo
 import in_.turker.nasarovervehicle.databinding.FragmentSpiritBinding
 import in_.turker.nasarovervehicle.ui.fragment.curiosity.VehiclePhotoAdapter
-import in_.turker.nasarovervehicle.ui.fragment.opportunity.OpportunityVM
 import in_.turker.nasarovervehicle.utils.collect
 import in_.turker.nasarovervehicle.utils.collectLast
 import kotlinx.coroutines.flow.distinctUntilChangedBy
@@ -30,6 +30,7 @@ class FragmentSpirit : BaseFragment<FragmentSpiritBinding, SpiritVM>() {
 
     override fun onFragmentCreated() {
         prepareRecyclerView()
+        prepareToolbar()
         collectLast(viewModel.getSpirit(), ::setVehiclePhoto)
 
     }
@@ -46,6 +47,16 @@ class FragmentSpirit : BaseFragment<FragmentSpiritBinding, SpiritVM>() {
             layoutManager = GridLayoutManager(
                 requireContext(),2
             )
+        }
+    }
+
+    private fun prepareToolbar() {
+        binding.toolbar.apply {
+            txtTitle.text=getString(R.string.spirit)
+
+            imgFilter.setOnClickListener {
+                Log.d("test123","spirit")
+            }
         }
     }
 

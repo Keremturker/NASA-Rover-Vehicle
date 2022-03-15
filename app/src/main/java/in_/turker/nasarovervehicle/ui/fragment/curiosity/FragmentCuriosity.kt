@@ -4,12 +4,12 @@ import androidx.fragment.app.viewModels
 import androidx.paging.LoadState
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
+import in_.turker.nasarovervehicle.R
 import in_.turker.nasarovervehicle.base.BaseFragment
 import in_.turker.nasarovervehicle.data.model.Photo
 import in_.turker.nasarovervehicle.databinding.FragmentCuriosityBinding
-import in_.turker.nasarovervehicle.utils.CameraType
+import in_.turker.nasarovervehicle.ui.dialog.applyFilter
 import in_.turker.nasarovervehicle.utils.collect
 import in_.turker.nasarovervehicle.utils.collectLast
 import kotlinx.coroutines.flow.distinctUntilChangedBy
@@ -28,8 +28,9 @@ class FragmentCuriosity : BaseFragment<FragmentCuriosityBinding, CuriosityVM>() 
 
     override fun onFragmentCreated() {
         prepareRecyclerView()
-        collectLast(viewModel.getCuriosity(), ::setVehiclePhoto)
+        prepareToolbar()
 
+        collectLast(viewModel.getCuriosity(), ::setVehiclePhoto)
     }
 
     private fun prepareRecyclerView() {
@@ -42,8 +43,20 @@ class FragmentCuriosity : BaseFragment<FragmentCuriosityBinding, CuriosityVM>() 
         binding.rvCuriosity.apply {
             adapter = vehiclePhotoAdapter
             layoutManager = GridLayoutManager(
-                requireContext(),2
+                requireContext(), 2
             )
+        }
+    }
+
+    private fun prepareToolbar() {
+        binding.toolbar.apply {
+            txtTitle.text = getString(R.string.curiosity)
+
+            imgFilter.setOnClickListener {
+                applyFilter(requireActivity()) {
+                    collectLast(viewModel.getCuriosity(it), ::setVehiclePhoto)
+                }
+            }
         }
     }
 
@@ -59,6 +72,7 @@ class FragmentCuriosity : BaseFragment<FragmentCuriosityBinding, CuriosityVM>() 
 
     private suspend fun setVehiclePhoto(itemsPagingData: PagingData<Photo>) {
         vehiclePhotoAdapter.submitData(itemsPagingData)
+
     }
 
     private fun onClickAction(item: Photo) {}

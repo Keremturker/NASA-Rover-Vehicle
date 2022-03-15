@@ -6,11 +6,10 @@ import androidx.paging.LoadState
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.GridLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
+import in_.turker.nasarovervehicle.R
 import in_.turker.nasarovervehicle.base.BaseFragment
 import in_.turker.nasarovervehicle.data.model.Photo
-import in_.turker.nasarovervehicle.databinding.FragmentCuriosityBinding
 import in_.turker.nasarovervehicle.databinding.FragmentOpportunityBinding
-import in_.turker.nasarovervehicle.ui.fragment.curiosity.CuriosityVM
 import in_.turker.nasarovervehicle.ui.fragment.curiosity.VehiclePhotoAdapter
 import in_.turker.nasarovervehicle.utils.collect
 import in_.turker.nasarovervehicle.utils.collectLast
@@ -29,6 +28,7 @@ class FragmentOpportunity: BaseFragment<FragmentOpportunityBinding, OpportunityV
 
     override fun onFragmentCreated() {
         prepareRecyclerView()
+        prepareToolbar()
         collectLast(viewModel.getOpportunity(), ::setVehiclePhoto)
     }
 
@@ -44,6 +44,16 @@ class FragmentOpportunity: BaseFragment<FragmentOpportunityBinding, OpportunityV
             layoutManager = GridLayoutManager(
                 requireContext(),2
             )
+        }
+    }
+
+    private fun prepareToolbar() {
+        binding.toolbar.apply {
+            txtTitle.text=getString(R.string.opportunity)
+
+            imgFilter.setOnClickListener {
+                Log.d("test123","opportunity")
+            }
         }
     }
 
